@@ -402,11 +402,11 @@ function PlannerPage() {
                   </div>
                 </div>
 
-                {result.taskBreakdown.length ? (
+                {result.taskBreakdown.filter((t) => t.steps.length).length ? (
                   <div>
                     <h3 className="text-sm font-semibold">Task breakdown</h3>
                     <div className="mt-2 grid gap-3 md:grid-cols-2">
-                      {result.taskBreakdown.map((t) => (
+                      {result.taskBreakdown.filter((t) => t.steps.length).map((t) => (
                         <div key={t.task} className="rounded-xl border border-border p-4">
                           <p className="text-sm font-medium">{t.task}</p>
                           <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
